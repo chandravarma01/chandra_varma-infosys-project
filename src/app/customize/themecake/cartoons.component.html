@@ -1,0 +1,33 @@
+<div class="cakes-container">
+  <div class="top-container">
+    <h2>Theme Cakes</h2>
+    <img
+      src="https://i.pinimg.com/564x/74/f0/9d/74f09d70cbd33b51506635a2a002c98d.jpg"
+    />
+
+    <p class="cake-paragraph">
+      Elevate your celebrations with our enchanting themed cakes, meticulously
+      crafted to reflect your unique style and interests. From whimsical fairy
+      tales to sophisticated designs, each themed cake is a masterpiece of
+      creativity and taste.
+    </p>
+  </div>
+
+  <div class="card-container1">
+    <div *ngFor="let row of [0, 1]; let rowIndex = index" class="card-row">
+      <div
+        *ngFor="let cake of cakes.slice(rowIndex * 4, (rowIndex + 1) * 4)"
+        class="card1"
+      >
+        <img [src]="cake.image" alt="Cake Image" />
+        <div class="card-content1">
+          <h4>{{ cake.title }}</h4>
+          <span class="price">₹{{ cake.price }}</span>
+        </div>
+        <button class="cart-button" (click)="addToCart(cake)">
+          <i class="bi bi-cart-fill"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+<div class="cakes-container">
+  <div class="top-container">
+    <h2>Christmas Cakes</h2>
+    <img
+      src="https://i.pinimg.com/564x/8e/59/43/8e5943153ca4ce1a64acf0c997e48f73.jpg"
+    />
+
+    <p class="cake-paragraph">
+      Embrace the magic of the holiday season with our enchanting Christmas
+      cakes! From traditional yuletide designs to whimsical winter wonderlands,
+      each cake is a festive masterpiece sure to delight both young and old.
+      Made with love and sprinkled with seasonal cheer
+    </p>
+  </div>
+
+  <div class="card-container1">
+    <div *ngFor="let row of [0]; let rowIndex = index" class="card-row">
+      <div
+        *ngFor="let cake of cakes.slice(rowIndex * 4, (rowIndex + 1) * 4)"
+        class="card1"
+      >
+        <img [src]="cake.image" alt="Cake Image" />
+        <div class="card-content1">
+          <h4>{{ cake.title }}</h4>
+          <span class="price">₹{{ cake.price }}</span>
+        </div>
+        <button class="cart-button" (click)="addToCart(cake)">
+          <i class="bi bi-cart-fill"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

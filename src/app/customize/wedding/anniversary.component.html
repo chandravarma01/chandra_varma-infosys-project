@@ -1,0 +1,32 @@
+<div class="cakes-container">
+  <div class="top-container">
+    <h2>Wedding Cakes</h2>
+    <img
+      src="https://i.pinimg.com/564x/24/26/4f/24264fd44011984045483341e7705cd5.jpg"
+    />
+    <p class="cake-paragraph">
+      Make your special day unforgettable with our stunning wedding cakes at
+      SweetSpot . Each cake is a masterpiece, crafted with love and attention to
+      detail, ensuring it reflects your unique style and taste. From classic
+      multi-tiered designs to contemporary artistic creations.
+    </p>
+  </div>
+
+  <div class="card-container1">
+    <div *ngFor="let row of [0, 1]; let rowIndex = index" class="card-row">
+      <div
+        *ngFor="let cake of cakes.slice(rowIndex * 4, (rowIndex + 1) * 4)"
+        class="card1"
+      >
+        <img [src]="cake.image" alt="Cake Image" />
+        <div class="card-content1">
+          <h4>{{ cake.title }}</h4>
+          <span class="price">₹{{ cake.price }}</span>
+        </div>
+        <button class="cart-button" (click)="addToCart(cake)">
+          <i class="bi bi-cart-fill"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,32 @@
+<div class="cakes-container">
+  <div class="top-container">
+    <h2>Newyear Theme</h2>
+    <img
+      src="https://i.pinimg.com/564x/8d/64/c6/8d64c6130285328116d8ffd6dd78aafe.jpg"
+    />
+    <p class="cake-paragraph">
+      Ring in the New Year with our dazzling selection of celebratory cakes!
+      Each cake is adorned with festive decorations and bursting with flavors
+      that capture the spirit of the season. Whether you're hosting a grand
+      party or enjoying an intimate gathering.
+    </p>
+  </div>
+
+  <div class="card-container1">
+    <div *ngFor="let row of [0]; let rowIndex = index" class="card-row">
+      <div
+        *ngFor="let cake of cakes.slice(rowIndex * 4, (rowIndex + 1) * 4)"
+        class="card1"
+      >
+        <img [src]="cake.image" alt="Cake Image" />
+        <div class="card-content1">
+          <h4>{{ cake.title }}</h4>
+          <span class="price">₹{{ cake.price }}</span>
+        </div>
+        <button class="cart-button" (click)="addToCart(cake)">
+          <i class="bi bi-cart-fill"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
